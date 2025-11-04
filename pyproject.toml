@@ -1,0 +1,14 @@
+[project]
+name = "langgraph-multi-agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain-anthropic>=1.0.1",
+    "langchain-google-genai>=3.0.0",
+    "langchain-groq>=1.0.0",
+    "langchain-openai>=1.0.2",
+    "langgraph==1.0.2",
+    "langgraph-cli[inmem]>=0.4.7",
+]
