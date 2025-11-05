@@ -7,6 +7,9 @@ from pathlib import Path
 class Settings(BaseSettings):
   GROQ_API_KEY : str
   OPENAI_API_KEY: str
+  DEFAULT_MODEL: str
+  max_retries: int = 3
+
   model_config = {"env_file": ".env"}
   
 
