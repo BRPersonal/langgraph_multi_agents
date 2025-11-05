@@ -11,4 +11,6 @@ dependencies = [
     "langchain-openai>=1.0.2",
     "langgraph==1.0.2",
     "langgraph-cli[inmem]>=0.4.7",
+    "pydantic>=2.12.3",
+    "pydantic-settings>=2.11.0",
 ]
