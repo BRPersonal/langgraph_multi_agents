@@ -1,6 +1,13 @@
 """
 Single Agent Workflow
 """
+import sys
+from pathlib import Path
+
+# Add project root to Python path BEFORE any imports
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 from typing import TypedDict, Annotated, List
 from langgraph.graph import StateGraph, END
 from langchain.agents import create_agent
@@ -11,7 +18,6 @@ from tools.analysis_tools import analyze_sentiment
 from utils.logger import logger
 from prompts import research_prompt
 import operator
-
 
 class SingleAgentState(TypedDict):
     """State for single agent workflow."""
