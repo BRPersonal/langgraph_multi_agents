@@ -27,4 +27,6 @@ $ uv add "langgraph-cli[inmem]"
 add pydantic dependencies
 uv add pydantic pydantic-settings
 
+add langchain
+uv add langchain
 
