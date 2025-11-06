@@ -61,7 +61,8 @@ def create_single_agent_system():
         """Process the task using the agent."""
         logger.info("Single agent processing task")
         
-        task = state.get('task', 'Research trending tech topics')
+        task = state.get('task')
+        assert task is not None, "Task cannot be null"
         prompt = research_prompt.format(task=task)
         
         try:
