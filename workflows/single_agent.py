@@ -1,6 +1,7 @@
 """
 Single Agent Workflow
 """
+
 """
 Hack that is required if you have to run this script
 directly from command line 
@@ -89,4 +90,15 @@ def create_single_agent_system():
     workflow.add_edge("process", END)
     
     return workflow.compile()
+
+if __name__ == "__main__":
+    # Run the agent
+    agent = create_single_agent_system()
+    result = agent.invoke({
+        "task": "Research trending tech topics",
+        "messages": []
+    })
+    
+    print("📊 Research Summary:")
+    print(result["result"])  
 
