@@ -11,7 +11,15 @@ def get_weather(city: str) -> str:
 def get_time(timezone: str = "UTC") -> str:
     """Get current time in specified timezone."""
     from datetime import datetime
-    return f"Current time: {datetime.now().strftime('%H:%M:%S')}"
+    from zoneinfo import ZoneInfo
+    
+    try:
+        tz = ZoneInfo(timezone)
+    except Exception:
+        return f"Unknown timezone '{timezone}'."
+
+    current_time = datetime.now(tz)
+    return f"Current time in {timezone}: {current_time.strftime('%H:%M:%S')}"
     
 # Create the agent
 model = ChatOpenAI(model="gpt-4", temperature=0)
@@ -21,6 +29,21 @@ agent = create_agent(
 )
 # Run it!
 response = agent.invoke({
-    "messages": [{"role": "user", "content": "What's the weather in NYC?"}]
+    "messages": [
+      {
+        "role": "user", 
+        "content": "What's the weather in NYC?"
+      }
+    ]
+})
+print(response["messages"][-1].content)
+
+response = agent.invoke({
+    "messages": [
+      {
+        "role": "user", 
+        "content": "What's the time in us eastern zone now?"
+      }
+    ]
 })
 print(response["messages"][-1].content)
