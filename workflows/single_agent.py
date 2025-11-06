@@ -1,6 +1,11 @@
 """
 Single Agent Workflow
 """
+"""
+Hack that is required if you have to run this script
+directly from command line 
+$ python workflows/single_agent.py
+"""
 import sys
 from pathlib import Path
 
