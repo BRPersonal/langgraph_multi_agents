@@ -30,3 +30,6 @@ uv add pydantic pydantic-settings
 add langchain
 uv add langchain
 
+uv run streamlit run app.py --server.port 8501 --server.address localhost
+
+

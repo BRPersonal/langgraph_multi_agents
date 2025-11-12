@@ -11,6 +11,7 @@ class Settings(BaseSettings):
   FAST_MODEL: str
 
   max_retries: int = 3
+  timeout_seconds: int = 30
 
   model_config = {"env_file": ".env"}
   
