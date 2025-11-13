@@ -36,7 +36,8 @@ uv add pytest-asyncio
 Run all thests
 python -m pytest -vv 
 
-
+# Start Streamlit web interface (main application)
 uv run streamlit run app.py --server.port 8501 --server.address localhost
 
+To stop the server, press ctrl + c
 
