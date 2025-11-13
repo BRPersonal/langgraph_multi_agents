@@ -14,5 +14,13 @@ dependencies = [
     "langgraph-cli[inmem]>=0.4.7",
     "pydantic>=2.12.3",
     "pydantic-settings>=2.11.0",
+    "pytest>=9.0.1",
+    "pytest-asyncio>=0.23.8",
     "streamlit>=1.51.0",
+]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:.*AgentStatePydantic.*:DeprecationWarning",
+    "ignore:.*LangGraphDeprecatedSinceV10.*",
 ]

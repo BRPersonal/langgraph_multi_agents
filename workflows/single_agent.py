@@ -16,7 +16,7 @@ sys.path.insert(0, str(project_root))
 
 from typing import TypedDict, Annotated, List
 from langgraph.graph import StateGraph, END
-from langgraph.prebuilt import create_react_agent
+from langchain.agents import create_agent
 from langchain_groq import ChatGroq
 from utils.config import settings
 from tools.search_tools import fetch_trending_topics, search_articles
@@ -47,7 +47,7 @@ def create_single_agent_system():
         groq_api_key=settings.GROQ_API_KEY
     )
     
-    agent = create_react_agent(
+    agent = create_agent(
         model=model,
         tools=[
             fetch_trending_topics,

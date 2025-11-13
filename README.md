@@ -1,5 +1,6 @@
 # langgraph_multi_agents
 Multi agent system using LangGraph and LangChain
+original source: https://github.com/MahendraMedapati27/langchain_Multi_Agent_System.git
 
 Create project
 $ cd ~/poc/python
@@ -29,6 +30,12 @@ uv add pydantic pydantic-settings
 
 add langchain
 uv add langchain
+uv add pytest
+uv add pytest-asyncio
+
+Run all thests
+python -m pytest -vv 
+
 
 uv run streamlit run app.py --server.port 8501 --server.address localhost
 
